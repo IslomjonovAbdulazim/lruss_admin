@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="description" content="LRUSS Educational Platform Admin Panel - O'quv platformasi admin paneli" />
+
+    <!-- Preconnect to backend API -->
+    <link rel="preconnect" href="https://lrussrubackend-production.up.railway.app" />
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Page Title -->
+    <title>LRUSS Admin - O'quv platformasi boshqaruvi</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta property="og:title" content="LRUSS Admin Panel" />
+    <meta property="og:description" content="Educational Platform Administrator Dashboard" />
+    <meta property="og:type" content="website" />
+
+    <!-- Prevent zoom on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="https://lrussrubackend-production.up.railway.app" />
+
+    <style>
+        /* Critical CSS for initial load */
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f9fafb;
+        }
+
+        /* Loading screen styles */
+        .initial-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 16px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide loading when React loads */
+        #root:not(:empty)+.initial-loading {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #1f2937;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Inter, sans-serif;
+        text-align: center;
+        padding: 2rem;
+      ">
+            <div>
+                <h1>JavaScript zarur</h1>
+                <p>LRUSS Admin paneli ishlashi uchun JavaScript yoqilgan bo'lishi kerak.</p>
+                <p>Iltimos, brauzeringizda JavaScript-ni yoqing va sahifani yangilang.</p>
+            </div>
+        </div>
+    </noscript>
+
+    <!-- React root element -->
+    <div id="root"></div>
+
+    <!-- Loading screen (shown until React loads) -->
+    <div class="initial-loading">
+        <div class="loading-spinner"></div>
+        <span>LRUSS Admin yuklanmoqda...</span>
+    </div>
+</body>
+
+</html>
